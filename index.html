@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Negociações</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="nav-neg">
+      <div class="container">
+        <h1>NEG-MVC</h1>
+      </div>
+    </nav>
+    <div class="container">
+          <form onsubmit="negc.adicionaNegociacao(event);">
+
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="data">Data</label>
+                <input id="data" type="date" class="form-control" placeholder="Entre com uma data" required autofocus>
+                <small id="dateHelp" class="form-text text-muted">Nunca se esqueça de digitar a data corretamente.</small>
+              </div>
+
+              <div class="form-group col-md-8">
+                <label for="quantidade">Quantidade</label>
+                <input id="quantidade" class="form-control" type="text" placeholder="Quantidade de negociações" required>
+              </div>
+
+              <div class="form-group col-md-12">
+                <label for="valor">Valor</label>
+                <input id="valor" class="form-control" type="text" placeholder="Digite o valor da negociação" required min="0.01">
+              </div>
+            </div>
+             <button type="submit" class="btn btn-primary">Adicionar</button>
+
+          </form>
+        </div>
+        <script src="app/models/Negociacao.js"></script>
+        <script src="app/models/ListaNegociacoes.js"></script>
+        <script src="app/controllers/NegociacaoController.js"></script>
+        <script src="app/helper/DateHelper.js"></script>
+
+        <script>
+          let negc = new NegociacaoController();
+          let neg = new ListaNegociacoes();
+        </script>
+
+      </body>
+</html>
